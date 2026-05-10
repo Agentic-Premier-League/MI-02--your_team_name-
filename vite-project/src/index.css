@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-900: #1e3a8a;
+  --color-navy-800: #1e293b;
+  --color-navy-900: #0f172a;
+  
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --primary: 220 70% 33%; /* Navy */
+    --primary-foreground: 0 0% 98%;
+    --accent: 188 86% 53%; /* Cyan */
+    --accent-foreground: 0 0% 98%;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+  
+  .glass-dark {
+    @apply bg-slate-900/80 backdrop-blur-md border border-slate-700/50 shadow-lg text-white;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
